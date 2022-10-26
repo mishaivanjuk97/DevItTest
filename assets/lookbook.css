@@ -1,0 +1,179 @@
+.lookbook-container {
+   max-width: 1280px;
+   padding: 70px;
+   margin: 0 auto;
+}
+
+.lookbook-wrapper {
+   position: relative;
+   z-index: 1;
+}
+
+.lookbook__header {
+   width: 100%;
+   text-align: center;
+}
+
+.lookbook__images {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.lookbook__images .lookbook:not(.lookbook__images .lookbook:last-child) {
+   margin-right: 30px;
+}
+
+.lookbook__images .lookbook {
+   flex-basis: 30%;
+}
+
+.lookbook__images .lookbook:hover {
+   cursor: pointer;
+}
+
+.lookbook-image {
+   position: relative;
+   padding-top: 125%;
+   height: 100%;
+}
+
+.lookbook-image img {
+   position: absolute;
+   top: 0;
+   left: 0;
+   object-fit: cover;
+   height: 100%;
+   width: 100%;
+}
+
+.lookbook-modal__wrapper {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 121;
+}
+
+.lookbook-modal__wrapper.show {
+   display: block;
+}
+
+.lookbook-modal__wrapper.show:hover {
+   cursor: pointer;
+}
+
+.lookbook-modal {
+   width: 100%;
+   max-width: 1000px;
+   height: auto;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   display: flex;
+   background-color: #fff;
+   padding: 0 20px;
+   box-shadow: 0 0 0 3px #c3c3c310;
+}
+
+.lookbook-modal:hover {
+   cursor: default;
+}
+
+.lookbook-modal__image {
+   margin-right: 30px;
+   padding: 20px 0 50px;
+}
+
+.lookbook-product__image {
+   margin-right: 20px;
+   min-width: 130px;
+   min-height: 170px;
+   overflow: hidden;
+   position: relative;
+}
+
+.lookbook-product__image img {
+   height: 100%;
+   position: absolute;
+   right: 50%;
+   transform: translateX(50%);
+}
+
+.lookbook-product {
+   display: flex;
+   padding: 20px 0 30px;
+   border-bottom: 1px solid #c3c3c3;
+}
+
+.lookbook-product:last-child {
+   border: none;
+}
+
+.lookbook-product__content {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+
+}
+
+.lookbook-product__header {
+   display: flex;
+   justify-content: space-between;
+}
+
+.lookbook-product__title, 
+.lookbook-product__price {
+   font-size: 22px;
+   line-height: 26px;
+   font-weight: 700;
+   text-transform: uppercase;
+}
+
+.lookbook-product__description {
+   font-size: 14px;
+   line-height: 16px;
+}
+
+.lookbook-product__actions {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.lookbook-product__select {
+   position: relative;
+}
+
+.lookbook-product__select select {
+   border: none;
+   padding-right: 20px;
+   appearance: none;
+   outline: 0; 
+   font-size: 18px;
+   cursor: pointer;
+}
+
+.lookbook-product__select::after {
+   content: '';
+   position: absolute;
+   right: 0;
+   top: 5px;
+   transform: rotate(135deg);
+   height: 10px;
+   width: 10px;
+   border-top: 1px solid #000;
+   border-right: 1px solid #000;
+}
+
+.lookbook-product__actions .add-to-cart-button {
+   width: 200px;
+   height: 40px;
+   background: #fff;
+   border: 1px solid;
+   font-size: 15px;
+   cursor: pointer;
+}
