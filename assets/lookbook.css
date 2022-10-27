@@ -123,6 +123,8 @@
 .lookbook-product__header {
    display: flex;
    justify-content: space-between;
+   color: #000;
+   text-decoration: none;
 }
 
 .lookbook-product__title, 

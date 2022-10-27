@@ -28,28 +28,28 @@
                               {% assign product_setting_id = 'product_' | append: forloop.index %}
                               {% assign product = block.settings[product_setting_id] %}
                               {% if product != blank %}
-                              <script>console.log('product', {{ product.price | json }})</script>
                                  <div class="lookbook-product">
-                                    <div class="lookbook-product__image">
+                                    <a href="{{ product.url }}" class="lookbook-product__image">
                                        <img 
                                           src="{{ product.featured_image | image_url: width:300 }}"
                                           alt="{{ product.featured_image.alt }}"
                                        >
-                                    </div>
+                                    </a>
                                     <div class="lookbook-product__content">
                                        <div class="lookbook-product__top">
-                                          <div class="lookbook-product__header">
+                                          <a href="{{ product.url }}"  class="lookbook-product__header">
                                              <span class="lookbook-product__title">{{ product.title }}</span>
                                              <span class="lookbook-product__price">
                                                 {{ product.price | money_without_trailing_zeros }}
                                              </span>
-                                          </div>
+                                          </a>
                                           <div class="lookbook-product__description">
                                              <p>{{ product.description }}</p>
                                           </div>
                                        </div>                                       
                                        <div class="lookbook-product__actions">
-                                          <div class="lookbook-product__variant-selector">
+                                          <div class="lookbook-product__variant-selector" 
+                                          data-selected-variant="{{ product.selected_or_first_available_variant.id }}">
                                              {% if product.variants.size > 1 %}
                                                 {%- for option in product.options_with_values -%}
                                                    <div class="lookbook-product__select">
